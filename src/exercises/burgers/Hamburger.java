@@ -7,6 +7,14 @@ public class Hamburger {
     private String meat;
     private double basePrice;
     private double priceOfAdditives;
+    private String additive1 = "Cucumber";
+    private double priceOfAdditive1 = 0.20;
+    private String additive2 = "Tomato";
+    private double priceOfAdditive2 = 0.40;
+    private String additive3 = "Salad";
+    private double priceOfAdditive3 = 0.30;
+    private String additive4 = "Pepper";
+    private double priceOfAdditive4 = 0.50;
 
     public Hamburger(String name, String breadRollType, String meat, double basePrice) {
         this.name = name;
@@ -15,24 +23,27 @@ public class Hamburger {
         this.basePrice = basePrice;
     }
 
-    public void addCarrot() {
-        priceOfAdditives += 0.20;
-        System.out.println("Added carrot to hamburger.");
-    }
-
-    public void addTomato() {
-        priceOfAdditives += 0.40;
-        System.out.println("Added tomato to hamburger.");
-    }
-
-    public void addCucumber() {
-        priceOfAdditives += 0.30;
-        System.out.println("Added cucumber to hamburger.");
-    }
-
-    public void addMustard() {
-        priceOfAdditives += 0.20;
-        System.out.println("Added mustard to hamburger.");
+    public String addAdditives(int additive) {
+        if (additive < 1 || additive > 4) {
+            return "Please choose additives from 1 to 4";
+        } else {
+            switch (additive) {
+                case 1:
+                    priceOfAdditives += priceOfAdditive1;
+                    return "Additive1 added to composition, total price now is " + getFinalPrice();
+                case 2:
+                    priceOfAdditives += priceOfAdditive2;
+                    return "Additive2 added to composition, total price now is " + getFinalPrice();
+                case 3:
+                    priceOfAdditives += priceOfAdditive3;
+                    return "Additive3 added to composition, total price now is " + getFinalPrice();
+                case 4:
+                    priceOfAdditives += priceOfAdditive4;
+                    return "Additive4 added to composition, total price now is " + getFinalPrice();
+                default:
+                    return "No additives added to composition, total price remains " + getFinalPrice();
+            }
+        }
     }
 
     public double getBasePrice() {
