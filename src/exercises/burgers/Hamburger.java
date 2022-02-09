@@ -7,14 +7,14 @@ public class Hamburger {
     private String meat;
     private double basePrice;
     private double priceOfAdditives;
-    private String additive1 = "Cucumber";
-    private double priceOfAdditive1 = 0.20;
-    private String additive2 = "Tomato";
-    private double priceOfAdditive2 = 0.40;
-    private String additive3 = "Salad";
-    private double priceOfAdditive3 = 0.30;
-    private String additive4 = "Pepper";
-    private double priceOfAdditive4 = 0.50;
+    private String additive1;
+    private String additive2;
+    private String additive3;
+    private String additive4;
+    private double additive1Price;
+    private double additive2Price;
+    private double additive3Price;
+    private double additive4Price;
 
     public Hamburger(String name, String breadRollType, String meat, double basePrice) {
         this.name = name;
@@ -23,27 +23,64 @@ public class Hamburger {
         this.basePrice = basePrice;
     }
 
-    public String addAdditives(int additive) {
-        if (additive < 1 || additive > 4) {
-            return "Please choose additives from 1 to 4";
-        } else {
-            switch (additive) {
-                case 1:
-                    priceOfAdditives += priceOfAdditive1;
-                    return "Additive1 added to composition, total price now is " + getFinalPrice();
-                case 2:
-                    priceOfAdditives += priceOfAdditive2;
-                    return "Additive2 added to composition, total price now is " + getFinalPrice();
-                case 3:
-                    priceOfAdditives += priceOfAdditive3;
-                    return "Additive3 added to composition, total price now is " + getFinalPrice();
-                case 4:
-                    priceOfAdditives += priceOfAdditive4;
-                    return "Additive4 added to composition, total price now is " + getFinalPrice();
-                default:
-                    return "No additives added to composition, total price remains " + getFinalPrice();
-            }
-        }
+    public void addAdditive1(String additive, double additivePrice) {
+        additive1 = additive;
+        additive1Price = additivePrice;
+        priceOfAdditives += additivePrice;
+        System.out.println(getAdditive1() + " is added to burger composition, total cost now is " + getFinalPrice());
+    }
+
+    public void addAdditive2(String additive, double additivePrice) {
+        additive2 = additive;
+        additive2Price = additivePrice;
+        priceOfAdditives += additivePrice;
+        System.out.println(getAdditive2() + " is added to burger composition, total cost now is " + getFinalPrice());
+    }
+
+    public void addAdditive3(String additive, double additivePrice) {
+        additive3 = additive;
+        additive3Price = additivePrice;
+        priceOfAdditives += additivePrice;
+        System.out.println(getAdditive3() + " is added to burger composition, total cost now is " + getFinalPrice());
+    }
+
+    public void addAdditive4(String additive, double additivePrice) {
+        additive4 = additive;
+        additive4Price = additivePrice;
+        priceOfAdditives += additivePrice;
+        System.out.println(getAdditive4() + " is added to burger composition, total cost now is " + getFinalPrice());
+    }
+
+    public String getAdditive1() {
+        return additive1;
+    }
+
+    public String getAdditive2() {
+        return additive2;
+    }
+
+    public String getAdditive3() {
+        return additive3;
+    }
+
+    public String getAdditive4() {
+        return additive4;
+    }
+
+    public double getAdditive1Price() {
+        return additive1Price;
+    }
+
+    public double getAdditive2Price() {
+        return additive2Price;
+    }
+
+    public double getAdditive3Price() {
+        return additive3Price;
+    }
+
+    public double getAdditive4Price() {
+        return additive4Price;
     }
 
     public double getBasePrice() {

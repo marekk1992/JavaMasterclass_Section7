@@ -2,18 +2,18 @@ package exercises.burgers;
 
 public class HealthyBurger extends Hamburger {
 
-    private String additive1 = "Cucumber";
-    private double priceOfAdditive1 = 0.20;
-    private String additive2 = "Tomato";
-    private double priceOfAdditive2 = 0.40;
-    private String additive3 = "Salad";
-    private double priceOfAdditive3 = 0.30;
-    private String additive4 = "Pepper";
-    private double priceOfAdditive4 = 0.50;
-    private String additive5 = "Cabbage";
-    private double priceOfAdditive5 = 0.45;
-    private String additive6 = "Zucchini";
-    private double priceOfAdditive6 = 0.35;
+    private String additive1;
+    private String additive2;
+    private String additive3;
+    private String additive4;
+    private String additive5;
+    private String additive6;
+    private double additive1Price;
+    private double additive2Price;
+    private double additive3Price;
+    private double additive4Price;
+    private double additive5Price;
+    private double additive6Price;
     private double priceOfAdditives;
 
     public HealthyBurger(String name, String meat, double basePrice) {
@@ -21,33 +21,37 @@ public class HealthyBurger extends Hamburger {
     }
 
     @Override
-    public String addAdditives(int additive) {
-        if (additive < 1 || additive > 6) {
-            return "Please choose additives from 1 to 6";
-        } else {
-            switch (additive) {
-                case 1:
-                    priceOfAdditives += priceOfAdditive1;
-                    return "Additive1 added to composition, total price now is " + getFinalPrice();
-                case 2:
-                    priceOfAdditives += priceOfAdditive2;
-                    return "Additive2 added to composition, total price now is " + getFinalPrice();
-                case 3:
-                    priceOfAdditives += priceOfAdditive3;
-                    return "Additive3 added to composition, total price now is " + getFinalPrice();
-                case 4:
-                    priceOfAdditives += priceOfAdditive4;
-                    return "Additive4 added to composition, total price now is " + getFinalPrice();
-                case 5:
-                    priceOfAdditives += priceOfAdditive5;
-                    return "Additive5 added to composition, total price now is " + getFinalPrice();
-                case 6:
-                    priceOfAdditives += priceOfAdditive6;
-                    return "Additive6 added to composition, total price now is " + getFinalPrice();
-                default:
-                    return "No additives added to composition, total price remains " + getFinalPrice();
-            }
-        }
+    public void addAdditive1(String additive, double additivePrice) {
+        super.addAdditive1(additive, additivePrice);
+    }
+
+    @Override
+    public void addAdditive2(String additive, double additivePrice) {
+        super.addAdditive2(additive, additivePrice);
+    }
+
+    @Override
+    public void addAdditive3(String additive, double additivePrice) {
+        super.addAdditive3(additive, additivePrice);
+    }
+
+    @Override
+    public void addAdditive4(String additive, double additivePrice) {
+        super.addAdditive4(additive, additivePrice);
+    }
+
+    public void addAdditive5(String additive, double additivePrice) {
+        additive5 = additive;
+        additive5Price = additivePrice;
+        priceOfAdditives += additivePrice;
+        System.out.println(getAdditive5() + " is added to burger composition, total cost now is " + getFinalPrice());
+    }
+
+    public void addAdditive6(String additive, double additivePrice) {
+        additive6 = additive;
+        additive6Price = additivePrice;
+        priceOfAdditives += additivePrice;
+        System.out.println(getAdditive6() + " is added to burger composition, total cost now is " + getFinalPrice());
     }
 
     @Override
@@ -58,5 +62,21 @@ public class HealthyBurger extends Hamburger {
     @Override
     public double getFinalPrice() {
         return priceOfAdditives + getBasePrice();
+    }
+
+    public String getAdditive5() {
+        return additive5;
+    }
+
+    public String getAdditive6() {
+        return additive6;
+    }
+
+    public double getAdditive5Price() {
+        return additive5Price;
+    }
+
+    public double getAdditive6Price() {
+        return additive6Price;
     }
 }
