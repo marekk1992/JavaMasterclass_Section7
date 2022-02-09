@@ -34,15 +34,15 @@ public class HealthyBurger extends Hamburger {
     public void addFifthAdditive(String additive, double additivePrice) {
         fifthAdditive = additive;
         fifthAdditivePrice = additivePrice;
-        System.out.println(fifthAdditive + " is added to burger composition, total cost now is "
-                + getTotalPrice());
+        System.out.println(fifthAdditive + " is added to burger composition for an extra " +
+                fifthAdditivePrice + ", total cost now is " + getTotalPrice() + ".");
     }
 
     public void addSixthAdditive(String additive, double additivePrice) {
         sixthAdditive = additive;
         sixthAdditivePrice = additivePrice;
-        System.out.println(sixthAdditive + " is added to burger composition, total cost now is "
-                + getTotalPrice());
+        System.out.println(sixthAdditive + " is added to burger composition for an extra " +
+                sixthAdditivePrice + ", total cost now is " + getTotalPrice() + ".");
     }
 
     @Override
@@ -52,7 +52,7 @@ public class HealthyBurger extends Hamburger {
 
     @Override
     public double getPriceOfAllAdditives() {
-        return super.getPriceOfAllAdditives();
+        return super.getPriceOfAllAdditives() + fifthAdditivePrice + sixthAdditivePrice;
     }
 
     @Override

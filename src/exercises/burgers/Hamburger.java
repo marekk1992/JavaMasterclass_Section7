@@ -25,29 +25,29 @@ public class Hamburger {
     public void addFirstAdditive(String additive, double additivePrice) {
         firstAdditive = additive;
         firstAdditivePrice = additivePrice;
-        System.out.println(firstAdditive + " is added to burger composition, total cost now is "
-                + getTotalPrice());
+        System.out.println(firstAdditive + " is added to burger composition for an extra " +
+                firstAdditivePrice + ", total cost now is " + getTotalPrice() + ".");
     }
 
     public void addSecondAdditive(String additive, double additivePrice) {
         secondAdditive = additive;
         secondAdditivePrice = additivePrice;
-        System.out.println(secondAdditive + " is added to burger composition, total cost now is "
-                + getTotalPrice());
+        System.out.println(secondAdditive + " is added to burger composition for an extra " +
+                secondAdditivePrice + ", total cost now is " + getTotalPrice() + ".");
     }
 
     public void addThirdAdditive(String additive, double additivePrice) {
         thirdAdditive = additive;
         thirdAdditivePrice = additivePrice;
-        System.out.println(thirdAdditive + " is added to burger composition, total cost now is "
-                + getTotalPrice());
+        System.out.println(thirdAdditive + " is added to burger composition for an extra " +
+                thirdAdditivePrice + ", total cost now is " + getTotalPrice() + ".");
     }
 
     public void addFourthAdditive(String additive, double additivePrice) {
         fourthAdditive = additive;
         fourthAdditivePrice = additivePrice;
-        System.out.println(fourthAdditive + " is added to burger composition, total cost now is "
-                + getTotalPrice());
+        System.out.println(fourthAdditive + " is added to burger composition for an extra " +
+                fourthAdditivePrice + ", total cost now is " + getTotalPrice() + ".");
     }
 
     public String getFirstAdditive() {
