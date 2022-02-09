@@ -2,53 +2,37 @@ package exercises.burgers;
 
 public class DeluxeBurger extends Hamburger {
 
-    private String firstAdditive;
-    private String secondAdditive;
-
-    public DeluxeBurger(String name, String breadRollType, String meat, double basePrice) {
-        super(name, breadRollType, meat, basePrice);
-        this.firstAdditive = "Chips";
-        this.secondAdditive = "Drink";
+    public DeluxeBurger(String breadRollType, String meat) {
+        super("Deluxe", breadRollType, meat, 13);
+        Additive firstAdditive = new Additive("Chips", 2.50);
+        super.addFirstAdditive(firstAdditive);
+        Additive secondAdditive = new Additive("Drink", 4.50);
+        super.addSecondAdditive(secondAdditive);
     }
 
     @Override
-    public void addFirstAdditive(String additive, double additivePrice) {
-        System.out.println("Can`t add more additives to deluxe burger composition");
+    public void addFirstAdditive(Additive additive) {
+        super.addFirstAdditive(additive);
     }
 
     @Override
-    public void addSecondAdditive(String additive, double additivePrice) {
-        System.out.println("Can`t add more additives to deluxe burger composition");
+    public void addSecondAdditive(Additive additive) {
+        super.addSecondAdditive(additive);
     }
 
     @Override
-    public void addThirdAdditive(String additive, double additivePrice) {
-        System.out.println("Can`t add more additives to deluxe burger composition");
+    public void addThirdAdditive(Additive additive) {
+        super.addThirdAdditive(additive);
     }
 
     @Override
-    public void addFourthAdditive(String additive, double additivePrice) {
-        System.out.println("Can`t add more additives to deluxe burger composition");
-    }
-
-    @Override
-    public String getFirstAdditive() {
-        return firstAdditive;
-    }
-
-    @Override
-    public String getSecondAdditive() {
-        return secondAdditive;
+    public void addFourthAdditive(Additive additive) {
+        super.addFourthAdditive(additive);
     }
 
     @Override
     public double getBasePrice() {
         return super.getBasePrice();
-    }
-
-    @Override
-    public double getPriceOfAllAdditives() {
-        return super.getPriceOfAllAdditives();
     }
 
     @Override
