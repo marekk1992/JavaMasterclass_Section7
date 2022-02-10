@@ -12,22 +12,22 @@ public class DeluxeBurger extends Hamburger {
 
     @Override
     public void addFirstAdditive(Additive additive) {
-        super.addFirstAdditive(additive);
+        System.out.println("Can`t add more additives to Deluxe burger composition.");
     }
 
     @Override
     public void addSecondAdditive(Additive additive) {
-        super.addSecondAdditive(additive);
+        System.out.println("Can`t add more additives to Deluxe burger composition.");
     }
 
     @Override
     public void addThirdAdditive(Additive additive) {
-        super.addThirdAdditive(additive);
+        System.out.println("Can`t add more additives to Deluxe burger composition.");
     }
 
     @Override
     public void addFourthAdditive(Additive additive) {
-        super.addFourthAdditive(additive);
+        System.out.println("Can`t add more additives to Deluxe burger composition.");
     }
 
     @Override
